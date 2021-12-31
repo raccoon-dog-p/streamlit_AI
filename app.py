@@ -14,8 +14,8 @@ import streamlit as st
 from datetime import datetime
 from streamlit.uploaded_file_manager import UploadedFile
 
-from run_object_detection import run_object_detection
-from text import run_text_detection
+from object_detection import run_object_detection
+from text_detection import run_text_detection
 
 def main():
 
