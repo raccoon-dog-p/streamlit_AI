@@ -66,19 +66,36 @@ def run_text_detection():
             IMAGE_PATHS_PNG= list(PATH_TO_IMAGE_DIR.glob('*.png'))
 
         if st.button('실행'):
-            print(IMAGE_PATHS_JPG[0])
-            if uploaded_files[0].name in str(IMAGE_PATHS_JPG[0]):
-                st.subheader('추출된 텍스트')
-                text=(detect_text(IMAGE_PATHS_JPG[0]))
-                st.write(text[0])
-                st.subheader('영어 번역')
-                translate = get_translate(text[0])
-                st.write(translate)
-            elif uploaded_files[0].name in str(IMAGE_PATHS_PNG[0]):
-                st.subheader('추출된 텍스트')
-                text=(detect_text(IMAGE_PATHS_PNG[0]))
-                st.write(text[0])
-                st.subheader('영어 번역')
-                translate = get_translate(text[0])
-                st.write(translate)
+            jpg_length= len(IMAGE_PATHS_JPG)
+            png_length = len(IMAGE_PATHS_PNG)
+            for i in range(0,jpg_length):
+                if uploaded_files[0].name in str(IMAGE_PATHS_JPG[i]):
+                    st.subheader('추출된 텍스트')
+                    text=(detect_text(IMAGE_PATHS_JPG[i]))
+                    st.write(text[0])
+                    st.subheader('영어 번역')
+                    translate = get_translate(text[0])
+                    st.write(translate)
+            for i in range(0,png_length):
+                if uploaded_files[0].name in str(IMAGE_PATHS_PNG[i]):
+                    st.subheader('추출된 텍스트')
+                    text=(detect_text(IMAGE_PATHS_PNG[i]))
+                    st.write(text[0])
+                    st.subheader('영어 번역')
+                    translate = get_translate(text[0])
+                    st.write(translate)
+            # if uploaded_files[0].name in str(IMAGE_PATHS_JPG[0]):
+            #     st.subheader('추출된 텍스트')
+            #     text=(detect_text(IMAGE_PATHS_JPG[0]))
+            #     st.write(text[0])
+            #     st.subheader('영어 번역')
+            #     translate = get_translate(text[0])
+            #     st.write(translate)
+            # elif uploaded_files[0].name in str(IMAGE_PATHS_PNG[0]):
+            #     st.subheader('추출된 텍스트')
+            #     text=(detect_text(IMAGE_PATHS_PNG[0]))
+            #     st.write(text[0])
+            #     st.subheader('영어 번역')
+            #     translate = get_translate(text[0])
+            #     st.write(translate)
     
