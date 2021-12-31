@@ -7,14 +7,11 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import time
 import cv2
-from object_detection.utils import ops as utils_ops
-from object_detection.utils import label_map_util
-from object_detection.utils import visualization_utils as viz_util
 import streamlit as st
 from datetime import datetime
 from streamlit.uploaded_file_manager import UploadedFile
 
-from object_detection import run_object_detection
+from tf_object_detection import run_object_detection
 from text_detection import run_text_detection
 
 def main():
