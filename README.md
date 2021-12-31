@@ -1,6 +1,6 @@
 # Object_detection
 
-Tensor flow 모델을 이용하였고 실행 화면은 다음과 같습니다.
+Tensor flow object detection api를 이용하였고 실행 화면은 다음과 같습니다.
 
 ## 홈 화면
 
