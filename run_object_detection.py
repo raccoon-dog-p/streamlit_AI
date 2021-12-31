@@ -17,6 +17,7 @@ from streamlit.uploaded_file_manager import UploadedFile
 
 
 def run_object_detection():
+    st.title('Tensorflow Object Detection')
     thresh = st.sidebar.slider('모델 정확도 설정',0.0,1.0,step=0.1)
     model_choice=st.radio('모델 선택',['ssd_mobilenet_v2_fpnlite_640x640_coco17_tpu-8','ssd_mobilenet_v2_320x320_coco17_tpu-8','ssd_mobilenet_v2_fpnlite_320x320_coco17_tpu-8'])
             

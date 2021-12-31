@@ -1,5 +1,28 @@
 import io
 import os
+import tensorflow as tf
+import os
+import pathlib
+import numpy as np
+import matplotlib.pyplot as plt
+from PIL import Image
+import time
+import streamlit as st
+from datetime import datetime
+from streamlit.uploaded_file_manager import UploadedFile
+import requests
+
+from Translation import get_translate
+
+def save_uploaded_file(directory, file) :
+    # 1.디렉토리가 있는지 확인하여, 없으면 디렉토리부터만든다.
+    if not os.path.exists(directory) :
+        os.makedirs(directory)
+    # 2. 디렉토리가 있으니, 파일을 저장.
+    with open(os.path.join(directory, file.name), 'wb') as f :
+        f.write(file.getbuffer())
+    return st.success("Saved file : {} in {}".format(file.name, directory))
+
 
 def detect_text(path):
     """Detects text in the file."""
@@ -25,5 +48,32 @@ def detect_text(path):
 
     return text_list
 
-print(detect_text('text_files/wakeupcat.jpg'))
+def run_text_detection():
+    st.title('TEXT DETECTION BY GOOGLE CV API')
+    uploaded_files = st.file_uploader('이미지파일 업로드',type=['png','jpeg','jpg']
+                        ,accept_multiple_files=True)
+    
+    if uploaded_files is not None:
 
+        for file in uploaded_files:
+            save_uploaded_file('temp_files',file)
+
+            img = Image.open(file)
+            st.image(img)
+            # detect_text(file)
+            PATH_TO_IMAGE_DIR = pathlib.Path('temp_files')
+            IMAGE_PATHS = list(PATH_TO_IMAGE_DIR.glob('*.jpg'))
+            if len(IMAGE_PATHS) < 1:
+                IMAGE_PATHS = list(PATH_TO_IMAGE_DIR.glob('*.png'))
+            print(IMAGE_PATHS[0])
+
+        if st.button('실행'):
+            st.subheader('추출된 텍스트')    
+            text = (detect_text(IMAGE_PATHS[0]))
+            st.write(text[0])
+            print(type(text[0]))
+            st.subheader('영어 번역')
+            translate = get_translate(text[0])
+            st.write(translate)
+            
+    
