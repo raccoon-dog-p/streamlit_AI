@@ -13,6 +13,8 @@ Tensor flow 모델을 이용하였고 실행 화면은 다음과 같습니다.
 
 # Text_detection
 
+구글 CV API 를 사용하였고 영어 번역은 PAPAGO API를 사용하였습니다.
+
 ## 홈 화면
 
 ![text](https://user-images.githubusercontent.com/88516240/147810314-bdfe862d-4828-40c0-a7af-37b99c802eaf.PNG)
