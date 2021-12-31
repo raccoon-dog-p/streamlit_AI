@@ -62,18 +62,23 @@ def run_text_detection():
             st.image(img)
             # detect_text(file)
             PATH_TO_IMAGE_DIR = pathlib.Path('temp_files')
-            IMAGE_PATHS = list(PATH_TO_IMAGE_DIR.glob('*.jpg'))
-            if len(IMAGE_PATHS) < 1:
-                IMAGE_PATHS = list(PATH_TO_IMAGE_DIR.glob('*.png'))
-            print(IMAGE_PATHS[0])
+            IMAGE_PATHS_JPG = list(PATH_TO_IMAGE_DIR.glob('*.jpg'))
+            IMAGE_PATHS_PNG= list(PATH_TO_IMAGE_DIR.glob('*.png'))
 
         if st.button('실행'):
-            st.subheader('추출된 텍스트')    
-            text = (detect_text(IMAGE_PATHS[0]))
-            st.write(text[0])
-            print(type(text[0]))
-            st.subheader('영어 번역')
-            translate = get_translate(text[0])
-            st.write(translate)
-            
+            print(IMAGE_PATHS_JPG[0])
+            if uploaded_files[0].name in str(IMAGE_PATHS_JPG[0]):
+                st.subheader('추출된 텍스트')
+                text=(detect_text(IMAGE_PATHS_JPG[0]))
+                st.write(text[0])
+                st.subheader('영어 번역')
+                translate = get_translate(text[0])
+                st.write(translate)
+            elif uploaded_files[0].name in str(IMAGE_PATHS_PNG[0]):
+                st.subheader('추출된 텍스트')
+                text=(detect_text(IMAGE_PATHS_PNG[0]))
+                st.write(text[0])
+                st.subheader('영어 번역')
+                translate = get_translate(text[0])
+                st.write(translate)
     
