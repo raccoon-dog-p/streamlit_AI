@@ -84,18 +84,5 @@ def run_text_detection():
                     st.subheader('영어 번역')
                     translate = get_translate(text[0])
                     st.write(translate)
-            # if uploaded_files[0].name in str(IMAGE_PATHS_JPG[0]):
-            #     st.subheader('추출된 텍스트')
-            #     text=(detect_text(IMAGE_PATHS_JPG[0]))
-            #     st.write(text[0])
-            #     st.subheader('영어 번역')
-            #     translate = get_translate(text[0])
-            #     st.write(translate)
-            # elif uploaded_files[0].name in str(IMAGE_PATHS_PNG[0]):
-            #     st.subheader('추출된 텍스트')
-            #     text=(detect_text(IMAGE_PATHS_PNG[0]))
-            #     st.write(text[0])
-            #     st.subheader('영어 번역')
-            #     translate = get_translate(text[0])
-            #     st.write(translate)
+
     
