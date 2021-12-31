@@ -8,15 +8,15 @@ Tensor flow 모델을 이용하였고 실행 화면은 다음과 같습니다.
 
 
 ## 실행 화면
-![title]('https://github.com/raccoon-dog-p/streamlit_AI/blob/main/images/title2.PNG?raw=true)
+![title](https://user-images.githubusercontent.com/88516240/147810311-b9ffa326-0f52-457e-9b29-4361a24944d0.PNG)
 
 
 # Text_detection
 
 ## 홈 화면
 
-![text]('https://github.com/raccoon-dog-p/streamlit_AI/blob/main/images/title3.PNG?raw=true')
+![text](https://user-images.githubusercontent.com/88516240/147810314-bdfe862d-4828-40c0-a7af-37b99c802eaf.PNG)
 
 ## 실행 화면
 
-![text]('https://github.com/raccoon-dog-p/streamlit_AI/blob/main/images/title4.PNG?raw=true')
+![text](https://user-images.githubusercontent.com/88516240/147810317-6675f924-38ed-493b-9e5c-6a71a99c3976.PNG)
